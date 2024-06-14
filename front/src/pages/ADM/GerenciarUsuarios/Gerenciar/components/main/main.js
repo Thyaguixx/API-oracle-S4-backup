@@ -2,10 +2,41 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import styles from "./style";
 import navigate from '../../../../../../../RootNavigation';
-
+import axios from '../../../../../../Axios/axiosInstancia'
 
 export default function Main(params) {
     const tipoUsuario = params.params
+    const [quantidadeConsultor, setQuantidadeConsultor] = React.useState(0)
+    const [quantidadeParceiro, setQuantidadeParceiro] = React.useState(0)
+
+    const GETQuantidadeConsultores = async () => {
+        try {
+            const response = await axios.get(`/ListarQuantidadeConsultores`);
+
+            if (response.data) {
+                setQuantidadeConsultor(response.data.Retorno);
+            }
+        } catch (error) {
+            console.error('Erro ao fazer a solicitação:', error);
+        }
+    };
+
+    const GETQuantidadeParceiros = async () => {
+        try {
+            const response = await axios.get(`/GetParceiroQuantidade`);
+
+            if (response.data) {
+                setQuantidadeParceiro(response.data.QuantidadeParceiros);
+            }
+        } catch (error) {
+            console.error('Erro ao fazer a solicitação:', error);
+        }
+    };
+
+    React.useEffect(() => {
+        GETQuantidadeConsultores()
+        GETQuantidadeParceiros()
+    }, [])
 
     return (
         <View style={styles.whiteBackground}>
@@ -19,11 +50,11 @@ export default function Main(params) {
             </View>
             <View style={styles.card}>
                 <View style={styles.campocard1}>
-                    <Text style={styles.texto1card}>9</Text>
+                    <Text style={styles.texto1card}>{quantidadeParceiro}</Text>
                     <Text style={styles.texto2card}>Parceiros</Text>
                 </View>
                 <View style={styles.campocard2}>
-                    <Text style={styles.texto1card}>9</Text>
+                    <Text style={styles.texto1card}>{quantidadeConsultor}</Text>
                     <Text style={styles.texto2card}>Consultores</Text>
                 </View>
             </View>
