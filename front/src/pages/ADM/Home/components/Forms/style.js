@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     bottom: 0,
-    backgroundColor: 'white',
+    backgroundColor: '#F3F1F1',
     alignItems: 'center',
     marginTop: 0,
     borderTopLeftRadius:30,
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     padding: 10,
  },
  formText: {
-    color: '#2F2A4E',
+    color: '#C84734',
     fontSize: 18,
     fontWeight: 'bold',
     paddingLeft: 20,
@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
  },
  buttonMenu: {
     borderRadius:10,
-    borderColor:'#B5AEAE',
-    borderWidth: 0.5,
+    borderColor:'#8A8585',
+   //  borderWidth: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
     width: '91.5%',
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     paddingBottom: 14,
     marginLeft: 12,
     margin: 5,
+    elevation: 4,
  },
  buttonContainer: {
    flexDirection: 'row',
@@ -64,9 +65,18 @@ const styles = StyleSheet.create({
    color: '#B5AEAE',
 },
 icon: {
-   width: 50,
-   height:50,
+   width: 40,
+   height:40,
    borderRadius: 8
+},
+icon2: {
+   width: 36,
+   height:40,
+},
+icon3: {
+   width: 39,
+   height:33,
+   
 }
 })
 

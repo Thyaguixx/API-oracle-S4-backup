@@ -7,12 +7,10 @@ import NavbarHome from './components/navbar/Home';
 
 export default function HomeADM({ route }) {
   return (
+    
     <View style={styles.body}>
-      <ScrollView>
         <Title params={route.params.TipoUsuario} />
         <Main params={route.params.TipoUsuario} />
-      </ScrollView>
-      <NavbarHome />
     </View>
   );
 }

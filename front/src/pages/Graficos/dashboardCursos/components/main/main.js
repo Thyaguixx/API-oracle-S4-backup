@@ -27,7 +27,7 @@ export default function Main(params) {
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
       <View style={styles.body}>
         <Text style={styles.bodyText}>
-          Expertises em desenvolvimento da Track X:
+          Expertises em desenvolvimento da Track {params.params.NomeExpertise}:
         </Text>
         {lista.map((item, index) => (
           <View style={styles.buttonMenu} key={index}>

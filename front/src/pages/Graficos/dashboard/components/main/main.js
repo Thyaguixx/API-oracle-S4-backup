@@ -31,7 +31,7 @@ export default function Main() {
                     <TouchableOpacity
                         style={styles.buttonMenu}
                         onPress={() => {
-                            navigate('DashboardExpertisesCursos', {IdExpertise: item.idExpertise})
+                            navigate('DashboardExpertisesCursos', {IdExpertise: item.idExpertise, NomeExpertise: item.nome})
                         }}>
                         <View style={styles.buttonContainer}>
                             <View style={styles.buttonText}>
